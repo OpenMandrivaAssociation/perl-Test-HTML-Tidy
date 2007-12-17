@@ -15,7 +15,6 @@ Source:         http://www.cpan.org/modules/by-module/Test/%{module}-%{version}.
 BuildRequires:  perl-devel
 %endif
 BuildRequires:  perl(HTML::Tidy)
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description 
 Handy way to check that HTML is valid, according to HTML::Tidy. It is built
