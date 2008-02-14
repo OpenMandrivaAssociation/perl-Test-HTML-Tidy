@@ -9,6 +9,7 @@ Release:        %{release}
 Summary:        Test::More-style wrapper around HTML::Tidy 
 License:        GPL or Artistic
 Group:          Development/Perl
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:            http://search.cpan.org/dist/%{module}
 Source:         http://www.cpan.org/modules/by-module/Test/%{module}-%{version}.tar.bz2
 %if %{mdkversion} < 1010
