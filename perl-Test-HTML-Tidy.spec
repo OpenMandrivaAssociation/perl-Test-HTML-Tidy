@@ -1,21 +1,23 @@
-%define module  Test-HTML-Tidy
-%define name    perl-%{module}
-%define version 1.00
-%define release %mkrel 5
+%define upstream_name    Test-HTML-Tidy
+%define upstream_version 1.00
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Test::More-style wrapper around HTML::Tidy 
-License:        GPL or Artistic
-Group:          Development/Perl
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Test/%{module}-%{version}.tar.bz2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 6
+
+Summary:    Test::More-style wrapper around HTML::Tidy 
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
 BuildRequires:  perl(HTML::Tidy)
+
+BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description 
 Handy way to check that HTML is valid, according to HTML::Tidy. It is built
@@ -25,7 +27,7 @@ If you are not already familiar with Test::More now would be the time to go
 take a look.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -46,5 +48,3 @@ rm -rf %{buildroot}
 %doc Changes
 %{perl_vendorlib}/Test
 %{_mandir}/*/*
-
-
