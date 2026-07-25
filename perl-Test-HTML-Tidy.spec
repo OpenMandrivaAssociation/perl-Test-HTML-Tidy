@@ -2,14 +2,14 @@
 %define upstream_version 1.00
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	9
+Version:	%{upstream_version}
+Release:	10
 
 Summary:	Test::More-style wrapper around HTML::Tidy 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/Test-HTML-Tidy
+Source0:	https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/Test-HTML-Tidy-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
